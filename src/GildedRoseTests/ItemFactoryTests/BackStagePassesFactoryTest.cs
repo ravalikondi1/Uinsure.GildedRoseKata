@@ -24,12 +24,12 @@ namespace GildedRoseTests.ItemFactoryTests
 
         [Theory]
         [InlineData(10, 0, 0)]
-        public void Factory_BackStagePasses_ItShouldSetQualityToZero(int quality, int sellin, int expectedQuality)
+        public void Factory_BackStagePasses_ItShouldSetQualityToZero(int quality, int sellIn, int expectedQuality)
         {
             Item = new Item()
             {
                 Name = Constants.BackStagePasses,
-                SellIn = sellin,
+                SellIn = sellIn,
                 Quality = quality
             };
             UpdateItemObj = ItemFactory.InitializeItem(Item);
@@ -41,12 +41,12 @@ namespace GildedRoseTests.ItemFactoryTests
         [Theory]
         [InlineData(4, 10, 6)]
         [InlineData(6, 5, 9)]
-        public void Factory_BackStagePasses_QualityIncreaseByTwoOrThreeBasedOnSellIn(int quality, int sellin, int expectedQuality)
+        public void Factory_BackStagePasses_QualityIncreaseByTwoOrThreeBasedOnSellIn(int quality, int sellIn, int expectedQuality)
         {
             Item = new Item()
             {
                 Name = Constants.BackStagePasses,
-                SellIn = sellin,
+                SellIn = sellIn,
                 Quality = quality
             };
             UpdateItemObj = ItemFactory.InitializeItem(Item);

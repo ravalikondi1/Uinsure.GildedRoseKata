@@ -7,12 +7,7 @@ namespace GildedRoseTests.ItemFactoryTests
 {
     public class StandardItemsFactoryTest : BaseTest
     {
-        protected Item Item { get; set; }
-
-        public StandardItemsFactoryTest()
-        {
-            Item = new Item() { Name = Constants.DexterityVest, SellIn = 10, Quality = 20 };
-        }
+        protected Item Item { get; set; } = new() { Name = Constants.DexterityVest, SellIn = 10, Quality = 20 };
 
         [Fact]
         public void Factory_StandardItems_Instantiation_Success()

@@ -5,6 +5,6 @@ namespace GildedRose.Interfaces
 {
     public interface IGildedRose
     {
-        public string UpdateQuality(List<Item> Items);
+        public string UpdateQuality(List<Item> items);
     }
 }

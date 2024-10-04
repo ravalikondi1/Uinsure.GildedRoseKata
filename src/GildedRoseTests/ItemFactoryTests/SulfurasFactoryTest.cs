@@ -7,12 +7,7 @@ namespace GildedRoseTests.ItemFactoryTests
 {
     public class SulfurasFactoryTest : BaseTest
     {
-        protected Item Item { get; set; }
-
-        public SulfurasFactoryTest()
-        {
-            Item = new Item() { Name = Constants.Sulfuras, SellIn = 0, Quality = 80 };
-        }
+        protected Item Item { get; set; } = new() { Name = Constants.Sulfuras, SellIn = 0, Quality = 80 };
 
         [Fact]
         public void Factory_Sulfuras_Instantiation_Success()

@@ -20,9 +20,9 @@ namespace GildedRoseTests.ItemFactoryTests
         [Theory]
         [InlineData(15, 12, 16)]
         [InlineData(12, 20, 13)]
-        public void Factory_AgedBrie_QualityIncreaseEachDay(int quality, int sellin, int expectedQuality)
+        public void Factory_AgedBrie_QualityIncreaseEachDay(int quality, int sellIn, int expectedQuality)
         {
-            Item = new Item() { Name = Constants.AgedBrie, SellIn = sellin, Quality = quality };
+            Item = new Item() { Name = Constants.AgedBrie, SellIn = sellIn, Quality = quality };
             UpdateItemObj = ItemFactory.InitializeItem(Item);
             UpdateItemObj.UpdateQuality(Item);
             Assert.Equal(expectedQuality, Item.Quality);
@@ -30,9 +30,9 @@ namespace GildedRoseTests.ItemFactoryTests
 
         [Theory]
         [InlineData(50, 10, 50)]
-        public void Factory_AgedBrie_QualityNotGreaterThan50(int quality, int sellin, int expectedQuality)
+        public void Factory_AgedBrie_QualityNotGreaterThan50(int quality, int sellIn, int expectedQuality)
         {
-            Item = new Item() { Name = Constants.AgedBrie, SellIn = sellin, Quality = quality };
+            Item = new Item() { Name = Constants.AgedBrie, SellIn = sellIn, Quality = quality };
             UpdateItemObj = ItemFactory.InitializeItem(Item);
             UpdateItemObj.UpdateQuality(Item);
             Assert.Equal(expectedQuality, Item.Quality);

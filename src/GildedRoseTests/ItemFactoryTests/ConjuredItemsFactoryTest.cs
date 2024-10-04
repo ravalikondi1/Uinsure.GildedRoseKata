@@ -7,12 +7,7 @@ namespace GildedRoseTests.ItemFactoryTests
 {
     public class ConjuredItemsFactoryTest : BaseTest
     {
-        protected Item Item { get; set; }
-
-        public ConjuredItemsFactoryTest()
-        {
-            Item = new Item() { Name = Constants.Conjured, SellIn = 3, Quality = 6 };
-        }
+        protected Item Item { get; set; } = new() { Name = Constants.Conjured, SellIn = 3, Quality = 6 };
 
         [Fact]
         public void Factory_ConjuredItems_Instantiation_Success()
@@ -23,12 +18,12 @@ namespace GildedRoseTests.ItemFactoryTests
 
         [Theory]
         [InlineData(10, 0, 8)]
-        public void Factory_ConjuredItems_QualityDecreaseByTwiceAsSellDatePasses(int quality, int sellin, int expectedQuality)
+        public void Factory_ConjuredItems_QualityDecreaseByTwiceAsSellDatePasses(int quality, int sellIn, int expectedQuality)
         {
             Item = new Item()
             {
                 Name = Constants.Conjured,
-                SellIn = sellin,
+                SellIn = sellIn,
                 Quality = quality
             };
             UpdateItemObj = ItemFactory.InitializeItem(Item);

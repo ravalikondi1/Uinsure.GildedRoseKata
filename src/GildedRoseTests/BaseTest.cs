@@ -7,12 +7,7 @@ namespace GildedRoseTests
     [ExcludeFromCodeCoverage]
     public abstract class BaseTest
     {
-        protected IItemFactory ItemFactory;
+        protected IItemFactory ItemFactory = new ItemFactory();
         protected IUpdateItemFactory UpdateItemObj;
-
-        protected BaseTest()
-        {
-            ItemFactory = new ItemFactory();
-        }
     }
 }

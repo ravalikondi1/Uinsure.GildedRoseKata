@@ -9,24 +9,17 @@ namespace GildedRose.Factory
     {
         public IUpdateItemFactory InitializeItem(Item item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException(nameof(item));
-            }
+            if (item != null)
+                return item.Name switch
+                {
+                    Constants.AgedBrie => new AgedBrieFactory(),
+                    Constants.BackStagePasses => new BackStagePassesFactory(),
+                    Constants.Sulfuras => new SulfurasFactory(),
+                    Constants.Conjured => new ConjuredItemsFactory(),
+                    _ => new StandardItemsFactory()
+                };
+            throw new ArgumentNullException(nameof(item));
 
-            switch (item.Name)
-            {
-                case Constants.AgedBrie:
-                    return new AgedBrieFactory();
-                case Constants.BackStagePasses:
-                    return new BackStagePassesFactory();
-                case Constants.Sulfuras:
-                    return new SulfurasFactory();
-                case Constants.Conjured:
-                    return new ConjuredItemsFactory();
-                default:
-                    return new StandardItemsFactory();
-            }
         }
     }
 }

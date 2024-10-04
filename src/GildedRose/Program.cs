@@ -1,16 +1,15 @@
-﻿using GildedRose;
+﻿using System;
+using System.Collections.Generic;
 using GildedRose.Entities;
 using GildedRose.Factory;
 using GildedRose.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 
-namespace GildedRoseKata
+namespace GildedRose
 {
     public static class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Console.WriteLine("OMGHAI!");
 
@@ -18,13 +17,13 @@ namespace GildedRoseKata
 
             var service = serviceProvider.GetService<IGildedRose>();
 
-            List<Item> Items = GetDefaultInventoryDetails();
+            List<Item> items = GetDefaultInventoryDetails();
 
             for (var i = 0; i < 31; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
-                var output = service.UpdateQuality(Items);
+                var output = service.UpdateQuality(items);
                 Console.WriteLine(output);
             }
         }
@@ -40,7 +39,7 @@ namespace GildedRoseKata
 
         private static List<Item> GetDefaultInventoryDetails()
         {
-            List<Item> Items = [
+            List<Item> items = [
                 new() {Name = Constants.DexterityVest, SellIn = 10, Quality = 20},
                 new() {Name = Constants.AgedBrie, SellIn = 2, Quality = 0},
                 new() {Name = Constants.Elixir, SellIn = 5, Quality = 7},
@@ -66,7 +65,7 @@ namespace GildedRoseKata
                 },
                 new() {Name = Constants.Conjured, SellIn = 3, Quality = 6}
                 ];
-            return Items;
+            return items;
         }
     }
 }

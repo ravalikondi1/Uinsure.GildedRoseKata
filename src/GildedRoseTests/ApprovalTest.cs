@@ -1,8 +1,8 @@
-﻿using GildedRoseKata;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using GildedRose;
 using VerifyXunit;
 using Xunit;
 
@@ -17,7 +17,7 @@ namespace GildedRoseTests
             Console.SetOut(new StringWriter(fakeoutput));
             Console.SetIn(new StringReader("a\n"));
 
-            Program.Main(["30"]);
+            Program.Main();
             var output = fakeoutput.ToString();
 
             return Verifier.Verify(output);
