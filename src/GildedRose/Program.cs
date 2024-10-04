@@ -14,11 +14,8 @@ namespace GildedRoseKata
         {
             Console.WriteLine("OMGHAI!");
 
-            //setup our DI
-            var serviceProvider = new ServiceCollection()
-                .AddSingleton<IItemFactory, ItemFactory>()
-                .AddSingleton<IGildedRose, GildedRoseService>()
-            .BuildServiceProvider();
+            ServiceProvider serviceProvider = RegisterServices();
+
             var service = serviceProvider.GetService<IGildedRose>();
 
             List<Item> Items = GetDefaultInventoryDetails();
@@ -30,6 +27,15 @@ namespace GildedRoseKata
                 var output = service.UpdateQuality(Items);
                 Console.WriteLine(output);
             }
+        }
+
+        private static ServiceProvider RegisterServices()
+        {
+            //setup our DI
+            return new ServiceCollection()
+                .AddSingleton<IItemFactory, ItemFactory>()
+                .AddSingleton<IGildedRose, GildedRoseService>()
+            .BuildServiceProvider();
         }
 
         private static List<Item> GetDefaultInventoryDetails()
