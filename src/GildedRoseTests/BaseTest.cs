@@ -1,13 +1,12 @@
-﻿using GildedRose.Console.Factory;
-using GildedRose.Console.Interfaces;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
+using GildedRose.Core.Factory;
+using GildedRose.Core.Interfaces;
 
-namespace GildedRose.UnitTests
+namespace GildedRose.UnitTests;
+
+[ExcludeFromCodeCoverage]
+public abstract class BaseTest
 {
-    [ExcludeFromCodeCoverage]
-    public abstract class BaseTest
-    {
-        protected IItemFactory ItemFactory = new ItemFactory();
-        protected IUpdateItemFactory UpdateItemObj;
-    }
+    protected IItemFactory ItemFactory = new ItemFactory();
+    protected IUpdateItemFactory UpdateItemObj;
 }
