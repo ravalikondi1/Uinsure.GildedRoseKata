@@ -1,4 +1,4 @@
-﻿namespace GildedRose.Entities
+﻿namespace GildedRose.Console.Entities
 {
     public class Item
     {

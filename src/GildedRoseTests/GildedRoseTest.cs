@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using GildedRose;
-using GildedRose.Entities;
+﻿using GildedRose.Console;
+using GildedRose.Console.Entities;
+using System.Collections.Generic;
 using Xunit;
 
-namespace GildedRoseTests
+namespace GildedRose.UnitTests
 {
     public class GildedRoseTest : BaseTest
     {

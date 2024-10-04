@@ -1,7 +1,7 @@
-﻿using GildedRose.Entities;
+﻿using GildedRose.Console.Entities;
 using System.Collections.Generic;
 
-namespace GildedRose.Interfaces
+namespace GildedRose.Console.Interfaces
 {
     public interface IGildedRose
     {

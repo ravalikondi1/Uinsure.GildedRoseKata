@@ -1,7 +1,7 @@
-﻿using GildedRose.Entities;
-using GildedRose.Interfaces;
+﻿using GildedRose.Console.Entities;
+using GildedRose.Console.Interfaces;
 
-namespace GildedRose.ItemFactories
+namespace GildedRose.Console.ItemFactories
 {
     public class ConjuredItemsFactory : IUpdateItemFactory
     {

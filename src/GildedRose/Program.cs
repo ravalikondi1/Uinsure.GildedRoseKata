@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using GildedRose.Entities;
-using GildedRose.Factory;
-using GildedRose.Interfaces;
+﻿using GildedRose.Console.Entities;
+using GildedRose.Console.Factory;
+using GildedRose.Console.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 
-namespace GildedRose
+namespace GildedRose.Console
 {
     public static class Program
     {
         public static void Main()
         {
-            Console.WriteLine("OMGHAI!");
+            System.Console.WriteLine("OMGHAI!");
 
             ServiceProvider serviceProvider = RegisterServices();
 
@@ -21,10 +20,10 @@ namespace GildedRose
 
             for (var i = 0; i < 31; i++)
             {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
+                System.Console.WriteLine("-------- day " + i + " --------");
+                System.Console.WriteLine("name, sellIn, quality");
                 var output = service.UpdateQuality(items);
-                Console.WriteLine(output);
+                System.Console.WriteLine(output);
             }
         }
 

@@ -1,6 +1,6 @@
-﻿using GildedRose.Entities;
+﻿using GildedRose.Console.Entities;
 
-namespace GildedRose.Interfaces
+namespace GildedRose.Console.Interfaces
 {
     public interface IUpdateItemFactory
     {

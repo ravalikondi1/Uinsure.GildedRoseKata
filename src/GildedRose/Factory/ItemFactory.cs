@@ -1,9 +1,9 @@
-﻿using GildedRose.Entities;
-using GildedRose.Interfaces;
-using GildedRose.ItemFactories;
+﻿using GildedRose.Console.Entities;
+using GildedRose.Console.Interfaces;
+using GildedRose.Console.ItemFactories;
 using System;
 
-namespace GildedRose.Factory
+namespace GildedRose.Console.Factory
 {
     public class ItemFactory : IItemFactory
     {

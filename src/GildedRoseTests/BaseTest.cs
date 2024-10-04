@@ -1,8 +1,8 @@
-﻿using GildedRose.Factory;
-using GildedRose.Interfaces;
+﻿using GildedRose.Console.Factory;
+using GildedRose.Console.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GildedRoseTests
+namespace GildedRose.UnitTests
 {
     [ExcludeFromCodeCoverage]
     public abstract class BaseTest

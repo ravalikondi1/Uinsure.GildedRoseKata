@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using GildedRose.Console.Entities;
+using GildedRose.Console.Factory;
+using GildedRose.Console.Interfaces;
+using System.Collections.Generic;
 using System.Text;
-using GildedRose.Entities;
-using GildedRose.Factory;
-using GildedRose.Interfaces;
 
-namespace GildedRose
+namespace GildedRose.Console
 {
     public class GildedRoseService(IItemFactory itemFactory) : IGildedRose
     {

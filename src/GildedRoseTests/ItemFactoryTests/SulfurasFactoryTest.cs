@@ -1,9 +1,9 @@
-﻿using GildedRose;
-using GildedRose.Entities;
-using GildedRose.ItemFactories;
+﻿using GildedRose.Console;
+using GildedRose.Console.Entities;
+using GildedRose.Console.ItemFactories;
 using Xunit;
 
-namespace GildedRoseTests.ItemFactoryTests
+namespace GildedRose.UnitTests.ItemFactoryTests
 {
     public class SulfurasFactoryTest : BaseTest
     {

@@ -1,4 +1,4 @@
-﻿namespace GildedRose
+﻿namespace GildedRose.Console
 {
     public static class Constants
     {

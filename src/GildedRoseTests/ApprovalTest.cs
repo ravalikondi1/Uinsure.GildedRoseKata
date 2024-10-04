@@ -1,12 +1,11 @@
-﻿using System;
+﻿using GildedRose.Console;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using GildedRose;
 using VerifyXunit;
 using Xunit;
 
-namespace GildedRoseTests
+namespace GildedRose.UnitTests
 {
     public class ApprovalTest
     {
@@ -14,8 +13,8 @@ namespace GildedRoseTests
         public Task ThirtyDays()
         {
             var fakeoutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeoutput));
-            Console.SetIn(new StringReader("a\n"));
+            System.Console.SetOut(new StringWriter(fakeoutput));
+            System.Console.SetIn(new StringReader("a\n"));
 
             Program.Main();
             var output = fakeoutput.ToString();
