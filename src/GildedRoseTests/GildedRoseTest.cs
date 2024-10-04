@@ -1,18 +1,21 @@
-﻿using Xunit;
-using System.Collections.Generic;
+﻿using GildedRose.Entities;
+using GildedRose.Interfaces;
 using GildedRoseKata;
+using System.Collections.Generic;
+using Xunit;
 
 namespace GildedRoseTests
 {
-    public class GildedRoseTest
+    public class GildedRoseTest : BaseTest
     {
         [Fact]
-        public void foo()
+        public void GildedRoseTest_Success()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-            GildedRose app = new GildedRose(Items);
-            app.UpdateQuality();
-            Assert.Equal("fixme", Items[0].Name);
+            List<Item> Items = [new Item { Name = "Item1", SellIn = 0, Quality = 0 }];
+            IGildedRose app = new GildedRoseService(ItemFactory);
+            app.UpdateQuality(Items);
+            Assert.Equal("Item1", Items[0].Name);
+            Assert.True(Items[0].Quality >= 0);
         }
     }
 }
