@@ -40,22 +40,8 @@ namespace GildedRoseTests.ItemFactoryTests
 
         [Theory]
         [InlineData(4, 10, 6)]
-        public void Factory_BackStagePasses_QualityIncreaseByTwo(int quality, int sellin, int expectedQuality)
-        {
-            Item = new Item()
-            {
-                Name = Constants.BackStagePasses,
-                SellIn = sellin,
-                Quality = quality
-            };
-            UpdateItemObj = ItemFactory.InitializeItem(Item);
-            UpdateItemObj.UpdateQuality(Item);
-            Assert.Equal(expectedQuality, Item.Quality);
-        }
-
-        [Theory]
         [InlineData(6, 5, 9)]
-        public void Factory_BackStagePasses_QualityIncreaseByThree(int quality, int sellin, int expectedQuality)
+        public void Factory_BackStagePasses_QualityIncreaseByTwoOrThreeBasedOnSellIn(int quality, int sellin, int expectedQuality)
         {
             Item = new Item()
             {
