@@ -16,13 +16,14 @@ namespace GildedRose.ItemFactories
             else if (item.Quality < 50)
             {
                 item.Quality++;
-                if (item.SellIn < 5 && item.Quality < 50)
+                switch ((item.SellIn, item.Quality))
                 {
-                    item.Quality += 2;
-                }
-                else if (item.SellIn < 10 && item.Quality < 50)
-                {
-                    item.Quality++;
+                    case ( < 5, < 50):
+                        item.Quality += 2;
+                        break;
+                    case ( < 10, < 50):
+                        item.Quality++;
+                        break;
                 }
             }
         }

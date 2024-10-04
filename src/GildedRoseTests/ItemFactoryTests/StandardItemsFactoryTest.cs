@@ -1,7 +1,6 @@
 ﻿using GildedRose;
 using GildedRose.Entities;
 using GildedRose.ItemFactories;
-using System.Reflection.Metadata;
 using Xunit;
 
 namespace GildedRoseTests.ItemFactoryTests
